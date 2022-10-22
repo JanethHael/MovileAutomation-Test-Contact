@@ -7,6 +7,7 @@ import activity.Contact.MainScreen;
 import io.qameta.allure.Description;
 import model.Contact;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import singletonSession.Session;
@@ -27,8 +28,8 @@ public class CreateContact {
         String nameCreate = "John";
         String lastNameCreate = "Smith";
         String phoneCreate = "7525363";
-
         mainScreen.addContactButton.click();
+        //Create Contact
         Contact contact = createContactD()
                 .name(nameCreate)
                 .lastName(lastNameCreate)
@@ -39,18 +40,26 @@ public class CreateContact {
         createContactForm.lastNameText.setText(contact.getLastName());
         createContactForm.phoneText.setText(contact.getPhone());
         createContactForm.saveContactButton.click();
-        //update
+        //Update Contact
         String nameUpdate = "John James";
         String lastNameUpdate = "Smith Charles";
         String phoneUpdate = "7525363";
+
+        Contact contactUpdate = createContactD()
+                .name(nameUpdate)
+                .lastName(lastNameUpdate)
+                .phone(phoneUpdate)
+                .build();
+
         editContactForm.editContactButton.click();
-        editContactForm.firstNameText.setText(nameUpdate);
-        editContactForm.lastNameText.setText(lastNameUpdate);
+        editContactForm.firstNameText.setText(contactUpdate.getName());
+        editContactForm.lastNameText.setText(contactUpdate.getLastName());
         editContactForm.editSaveContactButton.click();
 
-        /*Assertions.assertTrue(mainScreen.isNoteDisplayed(nameUpdate),
-                "ERROR, the note was not modify");*/
-        //delete
+        Assertions.assertTrue(mainScreen.isNoteDisplayed(nameUpdate),
+                "ERROR, the note was not modify");
+
+        //Delete Contact
         deleteContactForm.moreOptionButton.click();
         deleteContactForm.deleteOption.click();
         deleteContactForm.deleteButton.click();
