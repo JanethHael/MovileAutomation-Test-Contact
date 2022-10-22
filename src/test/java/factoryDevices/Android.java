@@ -15,7 +15,7 @@ public class Android implements IDevice{
     public AppiumDriver create() {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName","Cato");
+        capabilities.setCapability("deviceName","Pixel3");
         capabilities.setCapability("platformVersion","10");
         capabilities.setCapability("appPackage","com.android.contacts");
         capabilities.setCapability("appActivity","com.android.contacts.activities.PeopleActivity");

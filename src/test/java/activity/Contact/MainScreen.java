@@ -12,7 +12,4 @@ public class MainScreen {
         TextBox name = new TextBox(By.xpath("//android.widget.EditText[@text='"+title+"']"));
         return name.isControlDisplayed();
     }
-
-
-
 }

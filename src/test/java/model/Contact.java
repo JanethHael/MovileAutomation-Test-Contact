@@ -5,8 +5,6 @@ public class Contact {
     private String lastName;
     private String phone;
     private String typeMobile;
-    private String email;
-    private String home;
 
     public String getName() {
         return name;
@@ -40,19 +38,4 @@ public class Contact {
         this.typeMobile = typeMobile;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getHome() {
-        return home;
-    }
-
-    public void setHome(String home) {
-        this.home = home;
-    }
 }

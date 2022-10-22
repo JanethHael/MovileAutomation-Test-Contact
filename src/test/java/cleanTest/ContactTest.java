@@ -14,7 +14,7 @@ import singletonSession.Session;
 
 import static model.ContactBuilder.createContactD;
 
-public class CreateContact {
+public class ContactTest {
     MainScreen mainScreen = new MainScreen();
     CreateContactForm createContactForm = new CreateContactForm();
     EditContactForm editContactForm = new EditContactForm();
@@ -56,7 +56,7 @@ public class CreateContact {
         editContactForm.lastNameText.setText(contactUpdate.getLastName());
         editContactForm.editSaveContactButton.click();
 
-        Assertions.assertTrue(mainScreen.isNoteDisplayed(nameUpdate),
+       Assertions.assertTrue(mainScreen.isNoteDisplayed(nameUpdate),
                 "ERROR, the note was not modify");
 
         //Delete Contact
